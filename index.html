@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nosso Amor 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to right, #ffe6f0, #ffe0ec);
+      font-family: 'Quicksand', sans-serif;
+      color: #5c0033;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      color: #cc005f;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      color: #7a004f;
+    }
+
+    .counter {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      color: #88004f;
+      font-weight: bold;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 8px 20px rgba(255, 0, 102, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .love-button {
+      margin-top: 40px;
+      background: #ff3385;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.3em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 51, 133, 0.4);
+      transition: background 0.3s ease;
+    }
+
+    .love-button:hover {
+      background: #cc0066;
+    }
+
+    #romanticText {
+      display: none;
+      margin-top: 30px;
+      background: #fff0f5;
+      padding: 25px;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.2em;
+      line-height: 1.6;
+      box-shadow: 0 4px 20px rgba(255, 102, 153, 0.3);
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Feliz Dia dos Namorados 💖</h1>
+  <p class="subtitle">Uma pequena homenagem para o amor da minha vida</p>
+
+  <div class="counter" id="contador"></div>
+
+  <div class="card">
+    <p>O tempo para quando estou com você. Cada segundo ao seu lado vale mais que mil vidas sem o seu amor.</p>
+  </div>
+
+  <div class="card">
+    <p>Se amar você é um sonho, então nunca quero acordar. Você é o meu melhor capítulo.</p>
+  </div>
+
+  <div class="card">
+    <p>Você é a luz que ilumina minha vida, a melodia mais doce que embala meu coração.</p>
+  </div>
+
+  <div class="card">
+    <p>Te amar me ensinou que os sentimentos mais profundos são também os mais simples: um olhar, um abraço, um "fica comigo pra sempre".</p>
+  </div>
+
+  <button class="love-button" onclick="mostrarMensagem()">💘 EU TE AMO 💘</button>
+
+  <div id="romanticText">
+    <p>
+      Meu amor, não existem palavras suficientes no mundo para expressar o quanto você significa para mim. <br><br>
+      Você é meu hoje, meu amanhã e todos os meus sonhos. Prometo te amar, te respeitar, e caminhar ao seu lado por todos os caminhos da vida. <br><br>
+      Com você, a vida é mais leve, mais linda, mais completa. Te amo com todo o meu coração. ❤️
+    </p>
+  </div>
+
+  <!-- Música de fundo (Godspeed - Frank Ocean via link externo) -->
+  <audio id="musica" autoplay loop>
+    <source src="https://dl.sndup.net/hspq/godspeed%20-%20frank%20ocean.mp3" type="audio/mp3">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <script>
+    function mostrarMensagem() {
+      const texto = document.getElementById("romanticText");
+      texto.style.display = "block";
+      texto.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Contador de tempo desde 20/09/2024
+    const inicio = new Date("2024-09-20T00:00:00");
+
+    function atualizarContador() {
+      const agora = new Date();
+      const diferenca = agora - inicio;
+
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+      const segundos = Math.floor((diferenca / 1000) % 60);
+
+      document.getElementById("contador").innerText =
+        `Estamos juntos há ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos 💞`;
+    }
+
+    setInterval(atualizarContador, 1000);
+    atualizarContador();
+
+    // Controla o volume do áudio
+    const audio = document.getElementById("musica");
+    audio.volume = 0.1; // volume bem baixo
+  </script>
+</body>
+</html>
+
